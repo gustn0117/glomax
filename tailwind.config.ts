@@ -13,30 +13,23 @@ const config: Config = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
-      black: "#0a0a0a",
+      paper: "#fafaf9",
       ink: {
-        DEFAULT: "#0a0a0a",
-        soft: "#3d3d3d",
-        muted: "#737373",
-        faint: "#a3a3a3"
+        DEFAULT: "#161618",
+        soft: "#34343a",
+        muted: "#6c6c74",
+        faint: "#a1a1aa"
       },
       line: {
-        DEFAULT: "#e7e7e7",
-        soft: "#f0f0f0",
-        strong: "#cfcfcf"
+        DEFAULT: "#d6d6d8",
+        soft: "#ececee",
+        strong: "#9a9aa0"
       },
-      surface: {
-        DEFAULT: "#ffffff",
-        muted: "#f7f7f5"
-      },
-      accent: {
-        DEFAULT: "#1a3a5c",
-        ink: "#0c1e34"
-      },
-      mark: "#b1361a"
+      mark: "#a51d22",
+      navy: "#0c2a4d"
     },
     fontFamily: {
-      serif: ["var(--font-serif)", "Noto Serif KR", "serif"],
+      serif: ["var(--font-serif)", "Noto Serif KR", "Source Serif Pro", "serif"],
       sans: [
         "Pretendard Variable",
         "Pretendard",
@@ -47,24 +40,32 @@ const config: Config = {
         "Noto Sans KR",
         "sans-serif"
       ],
-      mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"]
+      mono: [
+        "JetBrains Mono",
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "monospace"
+      ]
     },
     extend: {
       fontSize: {
-        "display-0": ["clamp(3rem, 9vw, 7rem)", { lineHeight: "0.98", letterSpacing: "-0.035em" }],
-        "display-1": ["clamp(2.4rem, 6.4vw, 4.8rem)", { lineHeight: "1.04", letterSpacing: "-0.028em" }],
-        "display-2": ["clamp(1.9rem, 4.2vw, 3.1rem)", { lineHeight: "1.12", letterSpacing: "-0.018em" }],
-        "lede": ["clamp(1.05rem, 1.5vw, 1.28rem)", { lineHeight: "1.65" }],
+        "cover": ["clamp(3.4rem, 9vw, 7.2rem)", { lineHeight: "0.96", letterSpacing: "-0.04em" }],
+        "h1": ["clamp(2.1rem, 4.4vw, 3.3rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
+        "h2": ["clamp(1.5rem, 2.4vw, 2rem)", { lineHeight: "1.18", letterSpacing: "-0.015em" }],
+        "lede": ["clamp(1.12rem, 1.5vw, 1.32rem)", { lineHeight: "1.7" }],
         "body": ["1.0375rem", { lineHeight: "1.82" }],
-        "meta": ["0.74rem", { lineHeight: "1.4", letterSpacing: "0.18em" }]
+        "fine": ["0.86rem", { lineHeight: "1.55" }],
+        "meta": ["0.72rem", { lineHeight: "1.45", letterSpacing: "0.16em" }],
+        "tag": ["0.68rem", { lineHeight: "1.4", letterSpacing: "0.22em" }]
       },
       letterSpacing: {
         wider2: "0.18em",
         wider3: "0.3em"
       },
       maxWidth: {
-        prose: "60ch",
-        reader: "34rem"
+        prose: "62ch",
+        narrow: "44ch"
       }
     }
   },
