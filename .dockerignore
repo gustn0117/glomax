@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
+*.log
+.DS_Store
+.env*.local
+대표사진*.jpg
+사이트제작.pdf
+CLAUDE.md

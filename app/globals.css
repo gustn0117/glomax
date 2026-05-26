@@ -1,0 +1,154 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: #ffffff;
+  --c-ink: #0a0a0a;
+  --c-ink-soft: #3d3d3d;
+  --c-ink-muted: #737373;
+  --c-line: #e7e7e7;
+  --c-line-soft: #f0f0f0;
+  --c-accent: #1a3a5c;
+  --c-mark: #b1361a;
+}
+
+html,
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-feature-settings: "ss03" 1, "tnum" 1;
+  text-rendering: optimizeLegibility;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, h3 {
+  word-break: keep-all;
+}
+
+::selection {
+  background: var(--c-ink);
+  color: var(--c-bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.reader p + p {
+  margin-top: 1.05em;
+}
+
+.rule-top {
+  border-top: 1px solid var(--c-line);
+}
+
+.rule-bottom {
+  border-bottom: 1px solid var(--c-line);
+}
+
+main {
+  min-height: 100vh;
+}
+
+.fig-serif {
+  font-family: var(--font-serif), "Noto Serif KR", serif;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Hairline underline that retracts on hover */
+.link-rule {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 280ms ease;
+}
+.link-rule:hover {
+  background-size: 0 1px;
+}
+
+/* Reveal */
+@keyframes rise {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.rise {
+  animation: rise 700ms cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+.rise-1 { animation-delay: 60ms; }
+.rise-2 { animation-delay: 140ms; }
+.rise-3 { animation-delay: 240ms; }
+.rise-4 { animation-delay: 360ms; }
+
+/* Slow photo entry */
+@keyframes photoIn {
+  from { transform: scale(1.04); opacity: 0; filter: blur(6px); }
+  to   { transform: scale(1);    opacity: 1; filter: blur(0);   }
+}
+.photo-in {
+  animation: photoIn 1400ms cubic-bezier(0.16, 0.66, 0.16, 1) both;
+}
+
+/* Vertical caption — engraved into the margin */
+.caption-vert {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--c-ink-muted);
+}
+
+/* Numeral tag — large quiet number used as section anchor */
+.num-tag {
+  font-family: var(--font-serif), "Noto Serif KR", serif;
+  font-feature-settings: "lnum" 1;
+  font-weight: 400;
+  color: var(--c-ink);
+  line-height: 1;
+}
+
+/* Hairline horizontal axis for paragraph leading lines */
+.axis::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--c-ink);
+  margin-bottom: 1.25rem;
+}
+
+/* Index row hover — slides a hairline */
+.index-row {
+  position: relative;
+}
+.index-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  background: var(--c-ink);
+  transition: width 360ms cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.index-row:hover::after {
+  width: 100%;
+}
