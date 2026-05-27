@@ -9,8 +9,9 @@ export default function HomePage() {
   return (
     <>
       {/* ─────────────────── HERO — bright cinematic, centered ─────────────────── */}
-      <section className="relative isolate overflow-hidden bg-paper text-ink">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative isolate overflow-hidden bg-paper pb-24 text-ink md:pb-32">
+        {/* Photo bg only on the upper hero — stops before KPI strip */}
+        <div className="absolute inset-x-0 top-0 -z-10 h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={heroPhoto}
@@ -26,7 +27,7 @@ export default function HomePage() {
           <div className="tag text-ink rise rise-1">
             <span className="text-accent">●</span>&nbsp;&nbsp;ACTIVE PROJECTS · 04
           </div>
-          <div className="tag hidden text-ink-muted md:block rise rise-1">
+          <div className="tag hidden text-ink-soft md:block rise rise-1">
             EST. 2019 — SEOUL, KR
           </div>
         </div>
@@ -54,20 +55,24 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
 
-        {/* KPI strip */}
-        <div className="relative mx-auto mt-24 max-w-[1280px] px-5 md:mt-36 md:px-10">
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-paper-line-strong py-8 text-center md:grid-cols-4 md:py-10">
+      {/* ─────────────────── KPI strip — solid white surface ─────────────────── */}
+      <section className="border-y border-paper-line bg-paper text-ink">
+        <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 text-center md:grid-cols-4 md:py-14">
             {[
               { k: "PARTNERSHIP", v: "평균 동행 5년", sub: "01" },
               { k: "POSITIONING", v: "구조 위의 캠페인", sub: "02" },
               { k: "TRUST", v: "지역 침투 전략", sub: "03" },
               { k: "DELIVERY", v: "소수 프로젝트제", sub: "04" }
             ].map((kpi) => (
-              <div key={kpi.k} className="flex flex-col items-center gap-2">
-                <span className="mono text-[0.72rem] text-ink-faint">{kpi.sub}</span>
-                <dt className="tag text-ink-faint">{kpi.k}</dt>
-                <dd className="text-[1.02rem] text-ink md:text-[1.08rem]">{kpi.v}</dd>
+              <div key={kpi.k} className="flex flex-col items-center gap-2.5">
+                <span className="mono text-[0.72rem] text-ink-muted">{kpi.sub}</span>
+                <dt className="tag text-ink-soft">{kpi.k}</dt>
+                <dd className="text-[1.08rem] font-medium text-ink md:text-[1.15rem]">
+                  {kpi.v}
+                </dd>
               </div>
             ))}
           </dl>

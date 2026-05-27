@@ -30,12 +30,12 @@ const config: Config = {
         ghost: "#b8bbc2"
       },
       accent: {
-        DEFAULT: "#1d4ed8",
-        deep: "#173bb3",
-        sky: "#3a72e8",
-        glow: "rgba(29, 78, 216, 0.08)"
+        DEFAULT: "#b04124",
+        deep: "#7a2c17",
+        sky: "#c95c3d",
+        glow: "rgba(176, 65, 36, 0.08)"
       },
-      mark: "#c2410c"
+      mark: "#b04124"
     },
     fontFamily: {
       sans: [

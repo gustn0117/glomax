@@ -18,11 +18,11 @@
   --c-ink-faint: #8a8f99;
   --c-ink-ghost: #b8bbc2;
 
-  --c-accent: #1d4ed8;
-  --c-accent-deep: #173bb3;
-  --c-accent-sky: #3a72e8;
-  --c-accent-glow: rgba(29, 78, 216, 0.08);
-  --c-mark: #c2410c;
+  --c-accent: #b04124;
+  --c-accent-deep: #7a2c17;
+  --c-accent-sky: #c95c3d;
+  --c-accent-glow: rgba(176, 65, 36, 0.08);
+  --c-mark: #b04124;
 }
 
 html { scroll-behavior: smooth; }
