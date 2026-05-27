@@ -18,11 +18,11 @@
   --c-ink-faint: #8a8f99;
   --c-ink-ghost: #b8bbc2;
 
-  --c-accent: #b04124;
-  --c-accent-deep: #7a2c17;
-  --c-accent-sky: #c95c3d;
-  --c-accent-glow: rgba(176, 65, 36, 0.08);
-  --c-mark: #b04124;
+  --c-accent: #1d6b4f;
+  --c-accent-deep: #114a37;
+  --c-accent-sky: #2f8a68;
+  --c-accent-glow: rgba(29, 107, 79, 0.08);
+  --c-mark: #1d6b4f;
 }
 
 html { scroll-behavior: smooth; }
@@ -165,9 +165,9 @@ main { min-height: 100vh; }
 /* Stat number — confident & quiet */
 .stat-num {
   font-family: "Pretendard Variable", Pretendard, sans-serif;
-  font-weight: 200;
-  font-size: clamp(3.4rem, 7vw, 6.2rem);
-  letter-spacing: -0.045em;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4.6vw, 4rem);
+  letter-spacing: -0.035em;
   line-height: 1;
   font-feature-settings: "tnum" 1, "lnum" 1;
   color: var(--c-ink);

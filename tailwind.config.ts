@@ -30,12 +30,12 @@ const config: Config = {
         ghost: "#b8bbc2"
       },
       accent: {
-        DEFAULT: "#b04124",
-        deep: "#7a2c17",
-        sky: "#c95c3d",
-        glow: "rgba(176, 65, 36, 0.08)"
+        DEFAULT: "#1d6b4f",
+        deep: "#114a37",
+        sky: "#2f8a68",
+        glow: "rgba(29, 107, 79, 0.08)"
       },
-      mark: "#b04124"
+      mark: "#1d6b4f"
     },
     fontFamily: {
       sans: [
@@ -59,11 +59,11 @@ const config: Config = {
     },
     extend: {
       fontSize: {
-        "mega": ["clamp(3.8rem, 12vw, 11rem)", { lineHeight: "0.92", letterSpacing: "-0.045em" }],
-        "hero": ["clamp(2.8rem, 7vw, 6rem)", { lineHeight: "1.0", letterSpacing: "-0.035em" }],
-        "h1": ["clamp(2.1rem, 4.4vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.028em" }],
-        "h2": ["clamp(1.5rem, 2.4vw, 2.1rem)", { lineHeight: "1.18", letterSpacing: "-0.015em" }],
-        "lede": ["clamp(1.05rem, 1.4vw, 1.25rem)", { lineHeight: "1.65" }],
+        "mega": ["clamp(2.6rem, 6.6vw, 5.6rem)", { lineHeight: "1.0", letterSpacing: "-0.035em" }],
+        "hero": ["clamp(2rem, 4.6vw, 3.8rem)", { lineHeight: "1.08", letterSpacing: "-0.028em" }],
+        "h1": ["clamp(1.7rem, 3vw, 2.6rem)", { lineHeight: "1.18", letterSpacing: "-0.02em" }],
+        "h2": ["clamp(1.3rem, 2vw, 1.8rem)", { lineHeight: "1.25", letterSpacing: "-0.012em" }],
+        "lede": ["clamp(1rem, 1.3vw, 1.18rem)", { lineHeight: "1.65" }],
         "body": ["1.0125rem", { lineHeight: "1.7" }],
         "tag": ["0.7rem", { lineHeight: "1.4", letterSpacing: "0.22em" }]
       },
