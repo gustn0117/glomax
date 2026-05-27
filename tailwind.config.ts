@@ -15,40 +15,27 @@ const config: Config = {
       current: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      void: "#06070a",
-      base: {
-        DEFAULT: "#0a0c10",
-        100: "#14171d",
-        200: "#1c1f27",
-        300: "#262a33"
-      },
       paper: {
         DEFAULT: "#ffffff",
         soft: "#f5f5f7",
-        line: "#e6e7eb"
+        warm: "#fafaf8",
+        line: "#e6e7eb",
+        lineStrong: "#cfd1d6"
       },
       ink: {
-        DEFAULT: "#0a0c10",
+        DEFAULT: "#0e1117",
         soft: "#2c2f37",
         muted: "#5a5f6a",
-        faint: "#8a8f99"
-      },
-      lume: {
-        DEFAULT: "#f4f5f7",
-        soft: "#c4c8d0",
-        muted: "#8a8f99",
-        faint: "#5a5f6a"
-      },
-      line: {
-        dark: "#2a2e36",
-        DEFAULT: "#e6e7eb"
+        faint: "#8a8f99",
+        ghost: "#b8bbc2"
       },
       accent: {
-        DEFAULT: "#4cb8ff",
-        deep: "#2b8cd9",
-        glow: "rgba(76, 184, 255, 0.18)"
+        DEFAULT: "#1d4ed8",
+        deep: "#173bb3",
+        sky: "#3a72e8",
+        glow: "rgba(29, 78, 216, 0.08)"
       },
-      mark: "#ffb957"
+      mark: "#c2410c"
     },
     fontFamily: {
       sans: [

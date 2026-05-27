@@ -6,41 +6,29 @@
 @tailwind utilities;
 
 :root {
-  --c-void: #06070a;
-  --c-base: #0a0c10;
-  --c-base-100: #14171d;
-  --c-base-200: #1c1f27;
-  --c-base-300: #262a33;
-
   --c-paper: #ffffff;
   --c-paper-soft: #f5f5f7;
+  --c-paper-warm: #fafaf8;
   --c-paper-line: #e6e7eb;
+  --c-paper-line-strong: #cfd1d6;
 
-  --c-ink: #0a0c10;
+  --c-ink: #0e1117;
   --c-ink-soft: #2c2f37;
   --c-ink-muted: #5a5f6a;
   --c-ink-faint: #8a8f99;
+  --c-ink-ghost: #b8bbc2;
 
-  --c-lume: #f4f5f7;
-  --c-lume-soft: #c4c8d0;
-  --c-lume-muted: #8a8f99;
-  --c-lume-faint: #5a5f6a;
-
-  --c-line-dark: #2a2e36;
-  --c-line-light: #e6e7eb;
-
-  --c-accent: #4cb8ff;
-  --c-accent-deep: #2b8cd9;
-  --c-accent-glow: rgba(76, 184, 255, 0.18);
-  --c-mark: #ffb957;
+  --c-accent: #1d4ed8;
+  --c-accent-deep: #173bb3;
+  --c-accent-sky: #3a72e8;
+  --c-accent-glow: rgba(29, 78, 216, 0.08);
+  --c-mark: #c2410c;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 html, body {
-  background: var(--c-base);
-  color: var(--c-lume);
+  background: var(--c-paper);
+  color: var(--c-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -54,7 +42,7 @@ body {
   overflow-x: hidden;
 }
 h1, h2, h3, h4 { word-break: keep-all; }
-::selection { background: var(--c-accent); color: var(--c-base); }
+::selection { background: var(--c-accent); color: #ffffff; }
 a { color: inherit; text-decoration: none; }
 main { min-height: 100vh; }
 
@@ -73,9 +61,9 @@ main { min-height: 100vh; }
   font-weight: 500;
 }
 
-/* ─── Hairline divider styles ─── */
-.hr-on-dark { border: 0; border-top: 1px solid var(--c-line-dark); }
-.hr-on-light { border: 0; border-top: 1px solid var(--c-line-light); }
+/* ─── Hairline dividers ─── */
+.hr-line { border: 0; border-top: 1px solid var(--c-paper-line); }
+.hr-ink  { border: 0; border-top: 1px solid var(--c-ink); }
 
 /* ─── Reveal motion ─── */
 @keyframes rise {
@@ -89,14 +77,12 @@ main { min-height: 100vh; }
 .rise-4 { animation-delay: 540ms; }
 .rise-5 { animation-delay: 720ms; }
 
-/* Slow cinematic photo entry */
 @keyframes photoBleed {
   from { opacity: 0; transform: scale(1.06); filter: blur(8px); }
   to   { opacity: 1; transform: scale(1);    filter: blur(0);   }
 }
 .photo-in { animation: photoBleed 1600ms cubic-bezier(0.16, 0.66, 0.16, 1) both; }
 
-/* Marquee-like scroll mark for hero */
 @keyframes scrollHint {
   0%, 100% { transform: translateY(0); opacity: 0.7; }
   50%      { transform: translateY(10px); opacity: 0.3; }
@@ -113,44 +99,38 @@ main { min-height: 100vh; }
 }
 .link-rule:hover { background-size: 0 1px; }
 
-/* Glow border for cta-style elements */
-.glow-edge {
-  position: relative;
-  isolation: isolate;
+/* Veil for cinematic photos — keeps photo bright but readable */
+.veil-airy {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.18) 40%,
+    rgba(255,255,255,0.6) 100%
+  );
 }
-.glow-edge::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(180deg, var(--c-accent), transparent 60%);
-  opacity: 0.45;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Section background overlays on top of cinematic photos */
-.veil-bottom {
-  background: linear-gradient(180deg, rgba(6,7,10,0) 0%, rgba(6,7,10,0.55) 55%, rgba(6,7,10,0.92) 100%);
-}
-.veil-radial {
-  background: radial-gradient(120% 80% at 20% 30%, rgba(6,7,10,0.2) 0%, rgba(6,7,10,0.85) 70%, rgba(6,7,10,0.98) 100%);
+.veil-corner {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.65) 32%,
+    rgba(255,255,255,0.05) 70%
+  );
 }
 
-/* Pill-less, sharp button */
+/* Button — primary (filled ink) */
 .cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
   padding: 0.95rem 1.5rem;
-  background: var(--c-lume);
-  color: var(--c-base);
+  background: var(--c-ink);
+  color: var(--c-paper);
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: -0.005em;
   transition: background 300ms, color 300ms;
 }
-.cta-btn:hover { background: var(--c-accent); color: var(--c-base); }
+.cta-btn:hover { background: var(--c-accent); color: var(--c-paper); }
 .cta-btn .arrow {
   width: 18px; height: 1px; background: currentColor;
   position: relative;
@@ -166,22 +146,23 @@ main { min-height: 100vh; }
 }
 .cta-btn:hover .arrow { width: 28px; }
 
+/* Button — ghost (outline ink) */
 .cta-btn--ghost {
   background: transparent;
-  color: var(--c-lume);
-  border: 1px solid var(--c-line-dark);
+  color: var(--c-ink);
+  border: 1px solid var(--c-paper-line-strong);
 }
 .cta-btn--ghost:hover {
-  background: var(--c-lume);
-  color: var(--c-base);
+  background: var(--c-ink);
+  color: var(--c-paper);
+  border-color: var(--c-ink);
 }
 
-/* Reader serif body */
-.reader p { font-size: 1.04rem; line-height: 1.85; color: var(--c-lume-soft); }
-.reader-light p { color: var(--c-ink-soft); }
+/* Reader body */
+.reader p { font-size: 1.04rem; line-height: 1.85; color: var(--c-ink-soft); }
 .reader p + p { margin-top: 1em; }
 
-/* Number stat */
+/* Stat number — confident & quiet */
 .stat-num {
   font-family: "Pretendard Variable", Pretendard, sans-serif;
   font-weight: 200;
@@ -189,4 +170,31 @@ main { min-height: 100vh; }
   letter-spacing: -0.045em;
   line-height: 1;
   font-feature-settings: "tnum" 1, "lnum" 1;
+  color: var(--c-ink);
 }
+
+/* Accent slab beneath text for liquid-cyan emphasis */
+.slab-accent {
+  background: linear-gradient(180deg, transparent 60%, var(--c-accent-glow) 60%);
+  padding: 0 0.08em;
+}
+
+/* Service row arrow */
+.row-arrow {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+  transition: width 360ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  position: relative;
+}
+.row-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0; top: -4px;
+  width: 9px; height: 9px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+.group:hover .row-arrow { width: 64px; }
