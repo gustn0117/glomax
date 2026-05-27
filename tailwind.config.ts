@@ -17,10 +17,11 @@ const config: Config = {
       black: "#000000",
       paper: {
         DEFAULT: "#ffffff",
-        soft: "#f5f5f7",
-        warm: "#fafaf8",
-        line: "#e6e7eb",
-        lineStrong: "#cfd1d6"
+        soft: "#f4f3ee",
+        warm: "#f8f5ed",
+        cream: "#efe9dc",
+        line: "#d8d4ca",
+        lineStrong: "#b4afa1"
       },
       ink: {
         DEFAULT: "#0e1117",
@@ -49,6 +50,7 @@ const config: Config = {
         "sans-serif"
       ],
       serif: ["var(--font-serif)", "Noto Serif KR", "serif"],
+      display: ["var(--font-display)", "Fraunces", "Noto Serif KR", "serif"],
       mono: [
         "JetBrains Mono",
         "ui-monospace",
@@ -60,6 +62,7 @@ const config: Config = {
     extend: {
       fontSize: {
         "mega": ["clamp(2.6rem, 6.6vw, 5.6rem)", { lineHeight: "1.0", letterSpacing: "-0.035em" }],
+        "manifesto": ["clamp(1.9rem, 4.8vw, 4rem)", { lineHeight: "1.18", letterSpacing: "-0.018em" }],
         "hero": ["clamp(2rem, 4.6vw, 3.8rem)", { lineHeight: "1.08", letterSpacing: "-0.028em" }],
         "h1": ["clamp(1.7rem, 3vw, 2.6rem)", { lineHeight: "1.18", letterSpacing: "-0.02em" }],
         "h2": ["clamp(1.3rem, 2vw, 1.8rem)", { lineHeight: "1.25", letterSpacing: "-0.012em" }],
