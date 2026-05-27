@@ -7,29 +7,50 @@ const config: Config = {
       sm: "640px",
       md: "820px",
       lg: "1100px",
-      xl: "1400px"
+      xl: "1400px",
+      "2xl": "1600px"
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
-      paper: "#fafaf9",
+      black: "#000000",
+      void: "#06070a",
+      base: {
+        DEFAULT: "#0a0c10",
+        100: "#14171d",
+        200: "#1c1f27",
+        300: "#262a33"
+      },
+      paper: {
+        DEFAULT: "#ffffff",
+        soft: "#f5f5f7",
+        line: "#e6e7eb"
+      },
       ink: {
-        DEFAULT: "#161618",
-        soft: "#34343a",
-        muted: "#6c6c74",
-        faint: "#a1a1aa"
+        DEFAULT: "#0a0c10",
+        soft: "#2c2f37",
+        muted: "#5a5f6a",
+        faint: "#8a8f99"
+      },
+      lume: {
+        DEFAULT: "#f4f5f7",
+        soft: "#c4c8d0",
+        muted: "#8a8f99",
+        faint: "#5a5f6a"
       },
       line: {
-        DEFAULT: "#d6d6d8",
-        soft: "#ececee",
-        strong: "#9a9aa0"
+        dark: "#2a2e36",
+        DEFAULT: "#e6e7eb"
       },
-      mark: "#a51d22",
-      navy: "#0c2a4d"
+      accent: {
+        DEFAULT: "#4cb8ff",
+        deep: "#2b8cd9",
+        glow: "rgba(76, 184, 255, 0.18)"
+      },
+      mark: "#ffb957"
     },
     fontFamily: {
-      serif: ["var(--font-serif)", "Noto Serif KR", "Source Serif Pro", "serif"],
       sans: [
         "Pretendard Variable",
         "Pretendard",
@@ -40,6 +61,7 @@ const config: Config = {
         "Noto Sans KR",
         "sans-serif"
       ],
+      serif: ["var(--font-serif)", "Noto Serif KR", "serif"],
       mono: [
         "JetBrains Mono",
         "ui-monospace",
@@ -50,14 +72,13 @@ const config: Config = {
     },
     extend: {
       fontSize: {
-        "cover": ["clamp(3.4rem, 9vw, 7.2rem)", { lineHeight: "0.96", letterSpacing: "-0.04em" }],
-        "h1": ["clamp(2.1rem, 4.4vw, 3.3rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
-        "h2": ["clamp(1.5rem, 2.4vw, 2rem)", { lineHeight: "1.18", letterSpacing: "-0.015em" }],
-        "lede": ["clamp(1.12rem, 1.5vw, 1.32rem)", { lineHeight: "1.7" }],
-        "body": ["1.0375rem", { lineHeight: "1.82" }],
-        "fine": ["0.86rem", { lineHeight: "1.55" }],
-        "meta": ["0.72rem", { lineHeight: "1.45", letterSpacing: "0.16em" }],
-        "tag": ["0.68rem", { lineHeight: "1.4", letterSpacing: "0.22em" }]
+        "mega": ["clamp(3.8rem, 12vw, 11rem)", { lineHeight: "0.92", letterSpacing: "-0.045em" }],
+        "hero": ["clamp(2.8rem, 7vw, 6rem)", { lineHeight: "1.0", letterSpacing: "-0.035em" }],
+        "h1": ["clamp(2.1rem, 4.4vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.028em" }],
+        "h2": ["clamp(1.5rem, 2.4vw, 2.1rem)", { lineHeight: "1.18", letterSpacing: "-0.015em" }],
+        "lede": ["clamp(1.05rem, 1.4vw, 1.25rem)", { lineHeight: "1.65" }],
+        "body": ["1.0125rem", { lineHeight: "1.7" }],
+        "tag": ["0.7rem", { lineHeight: "1.4", letterSpacing: "0.22em" }]
       },
       letterSpacing: {
         wider2: "0.18em",
@@ -66,6 +87,9 @@ const config: Config = {
       maxWidth: {
         prose: "62ch",
         narrow: "44ch"
+      },
+      transitionTimingFunction: {
+        precise: "cubic-bezier(0.2, 0.7, 0.2, 1)"
       }
     }
   },

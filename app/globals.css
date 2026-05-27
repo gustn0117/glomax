@@ -6,188 +6,187 @@
 @tailwind utilities;
 
 :root {
-  --c-bg: #ffffff;
-  --c-paper: #fafaf9;
-  --c-ink: #161618;
-  --c-ink-soft: #34343a;
-  --c-ink-muted: #6c6c74;
-  --c-line: #d6d6d8;
-  --c-line-soft: #ececee;
-  --c-line-strong: #9a9aa0;
-  --c-mark: #a51d22;
-  --c-navy: #0c2a4d;
+  --c-void: #06070a;
+  --c-base: #0a0c10;
+  --c-base-100: #14171d;
+  --c-base-200: #1c1f27;
+  --c-base-300: #262a33;
+
+  --c-paper: #ffffff;
+  --c-paper-soft: #f5f5f7;
+  --c-paper-line: #e6e7eb;
+
+  --c-ink: #0a0c10;
+  --c-ink-soft: #2c2f37;
+  --c-ink-muted: #5a5f6a;
+  --c-ink-faint: #8a8f99;
+
+  --c-lume: #f4f5f7;
+  --c-lume-soft: #c4c8d0;
+  --c-lume-muted: #8a8f99;
+  --c-lume-faint: #5a5f6a;
+
+  --c-line-dark: #2a2e36;
+  --c-line-light: #e6e7eb;
+
+  --c-accent: #4cb8ff;
+  --c-accent-deep: #2b8cd9;
+  --c-accent-glow: rgba(76, 184, 255, 0.18);
+  --c-mark: #ffb957;
 }
 
-html,
-body {
-  background: var(--c-bg);
-  color: var(--c-ink);
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  background: var(--c-base);
+  color: var(--c-lume);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
     "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-feature-settings: "tnum" 1, "lnum" 1, "ss03" 1;
   text-rendering: optimizeLegibility;
   word-break: keep-all;
   overflow-wrap: anywhere;
+  overflow-x: hidden;
 }
-
-h1, h2, h3, h4 {
-  word-break: keep-all;
-}
-
-::selection {
-  background: var(--c-ink);
-  color: var(--c-bg);
-}
-
+h1, h2, h3, h4 { word-break: keep-all; }
+::selection { background: var(--c-accent); color: var(--c-base); }
 a { color: inherit; text-decoration: none; }
-
 main { min-height: 100vh; }
 
-/* ─── Report typography ─────────────────────────────────────────────────── */
+/* ─── Utility classes ─── */
 
-/* Mono labels: section markers, page numbers, footnote refs */
 .mono {
   font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   font-feature-settings: "tnum" 1, "ss01" 1;
 }
 
-/* Tabular figures within serif (large numerals) */
-.fig-serif {
-  font-family: var(--font-serif), "Noto Serif KR", serif;
-  font-feature-settings: "tnum" 1, "lnum" 1;
-}
-
-/* Section heading number (1.0 / 2.0 etc.) */
-.section-no {
+.tag {
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-feature-settings: "tnum" 1;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--c-ink);
-}
-
-/* Horizontal hairlines */
-.hr-strong {
-  border: 0;
-  border-top: 1px solid var(--c-ink);
-}
-.hr-line {
-  border: 0;
-  border-top: 1px solid var(--c-line);
-}
-.hr-double {
-  border: 0;
-  border-top: 1px solid var(--c-ink);
-  border-bottom: 1px solid var(--c-ink);
-  height: 4px;
-}
-
-/* Footnote superscript ref number */
-.fn-ref {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.7em;
-  vertical-align: super;
-  line-height: 0;
-  color: var(--c-mark);
-  margin-left: 1px;
   font-weight: 500;
 }
 
-/* Marginalia — small notes in the side gutter */
-.marginalia {
-  font-size: 0.78rem;
-  line-height: 1.55;
-  color: var(--c-ink-muted);
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-}
+/* ─── Hairline divider styles ─── */
+.hr-on-dark { border: 0; border-top: 1px solid var(--c-line-dark); }
+.hr-on-light { border: 0; border-top: 1px solid var(--c-line-light); }
 
-/* Reader running text */
-.reader p + p {
-  margin-top: 1.1em;
+/* ─── Reveal motion ─── */
+@keyframes rise {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
-.reader p {
-  font-family: var(--font-serif), "Noto Serif KR", serif;
-  font-size: 1.0625rem;
-  line-height: 1.85;
-  color: var(--c-ink-soft);
-}
-.reader p:first-of-type::first-line {
-  font-variant: small-caps;
-  letter-spacing: 0.04em;
-}
+.rise { animation: rise 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-1 { animation-delay: 80ms; }
+.rise-2 { animation-delay: 200ms; }
+.rise-3 { animation-delay: 360ms; }
+.rise-4 { animation-delay: 540ms; }
+.rise-5 { animation-delay: 720ms; }
 
-/* Hairline retracting underline */
+/* Slow cinematic photo entry */
+@keyframes photoBleed {
+  from { opacity: 0; transform: scale(1.06); filter: blur(8px); }
+  to   { opacity: 1; transform: scale(1);    filter: blur(0);   }
+}
+.photo-in { animation: photoBleed 1600ms cubic-bezier(0.16, 0.66, 0.16, 1) both; }
+
+/* Marquee-like scroll mark for hero */
+@keyframes scrollHint {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50%      { transform: translateY(10px); opacity: 0.3; }
+}
+.scroll-hint { animation: scrollHint 2400ms ease-in-out infinite; }
+
+/* Underline retract */
 .link-rule {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 100% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 280ms ease;
+  transition: background-size 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .link-rule:hover { background-size: 0 1px; }
 
-/* Reveal */
-@keyframes rise {
-  from { transform: translateY(10px); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
+/* Glow border for cta-style elements */
+.glow-edge {
+  position: relative;
+  isolation: isolate;
 }
-.rise { animation: rise 700ms cubic-bezier(0.2, 0.6, 0.2, 1) both; }
-.rise-1 { animation-delay: 60ms; }
-.rise-2 { animation-delay: 140ms; }
-.rise-3 { animation-delay: 240ms; }
-.rise-4 { animation-delay: 360ms; }
-
-/* Table — report style: hairline, dense, mono numerals */
-table.report {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.96rem;
-}
-table.report thead th {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  text-align: left;
-  font-weight: 500;
-  color: var(--c-ink);
-  padding: 0.7rem 0.9rem 0.7rem 0;
-  border-top: 1px solid var(--c-ink);
-  border-bottom: 1px solid var(--c-ink);
-  vertical-align: bottom;
-}
-table.report tbody td {
-  padding: 1.4rem 0.9rem 1.4rem 0;
-  border-bottom: 1px solid var(--c-line);
-  vertical-align: top;
-  color: var(--c-ink);
-}
-table.report td.col-no {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-feature-settings: "tnum" 1;
-  color: var(--c-ink-muted);
-  white-space: nowrap;
+.glow-edge::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, var(--c-accent), transparent 60%);
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Page-number style mark */
-.page-mark {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  color: var(--c-ink-muted);
+/* Section background overlays on top of cinematic photos */
+.veil-bottom {
+  background: linear-gradient(180deg, rgba(6,7,10,0) 0%, rgba(6,7,10,0.55) 55%, rgba(6,7,10,0.92) 100%);
+}
+.veil-radial {
+  background: radial-gradient(120% 80% at 20% 30%, rgba(6,7,10,0.2) 0%, rgba(6,7,10,0.85) 70%, rgba(6,7,10,0.98) 100%);
 }
 
-/* Figure caption */
-figcaption.caption {
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--c-ink-muted);
+/* Pill-less, sharp button */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.5rem;
+  background: var(--c-lume);
+  color: var(--c-base);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.005em;
+  transition: background 300ms, color 300ms;
+}
+.cta-btn:hover { background: var(--c-accent); color: var(--c-base); }
+.cta-btn .arrow {
+  width: 18px; height: 1px; background: currentColor;
+  position: relative;
+  transition: width 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.cta-btn .arrow::after {
+  content: "";
+  position: absolute; right: 0; top: -3px;
+  width: 7px; height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+.cta-btn:hover .arrow { width: 28px; }
+
+.cta-btn--ghost {
+  background: transparent;
+  color: var(--c-lume);
+  border: 1px solid var(--c-line-dark);
+}
+.cta-btn--ghost:hover {
+  background: var(--c-lume);
+  color: var(--c-base);
+}
+
+/* Reader serif body */
+.reader p { font-size: 1.04rem; line-height: 1.85; color: var(--c-lume-soft); }
+.reader-light p { color: var(--c-ink-soft); }
+.reader p + p { margin-top: 1em; }
+
+/* Number stat */
+.stat-num {
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+  font-weight: 200;
+  font-size: clamp(3.4rem, 7vw, 6.2rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+  font-feature-settings: "tnum" 1, "lnum" 1;
 }
