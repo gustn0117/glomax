@@ -3,6 +3,7 @@ import { Noto_Serif_KR, Fraunces } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import InquiryBar from "@/components/InquiryBar";
 
 const notoSerifKr = Noto_Serif_KR({
   subsets: ["latin"],
@@ -40,10 +41,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={`${notoSerifKr.variable} ${fraunces.variable}`}>
-      <body>
+      <body className="pb-[150px] md:pb-[72px]">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <InquiryBar />
       </body>
     </html>
   );

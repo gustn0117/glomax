@@ -118,12 +118,24 @@ main { min-height: 100vh; }
 
 /* Photo veils */
 .veil-airy {
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.45) 0%,
-    rgba(255,255,255,0.12) 38%,
-    rgba(255,255,255,0.62) 100%
-  );
+  background:
+    radial-gradient(
+      90% 60% at 50% 45%,
+      rgba(255,255,255,0.78) 0%,
+      rgba(255,255,255,0.45) 40%,
+      rgba(255,255,255,0.18) 80%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.6) 0%,
+      rgba(255,255,255,0.25) 40%,
+      rgba(255,255,255,0.72) 100%
+    );
+}
+
+/* Slight desaturation on hero photo so dark text reads cleanly */
+.photo-soft {
+  filter: saturate(0.82) brightness(1.02);
 }
 
 /* CTA buttons */

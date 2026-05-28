@@ -24,7 +24,7 @@ export default function HomePage() {
             src={heroPhoto}
             alt=""
             aria-hidden="true"
-            className="h-full w-full object-cover photo-in"
+            className="h-full w-full object-cover photo-in photo-soft"
           />
           <div className="absolute inset-0 veil-airy" />
         </div>
